@@ -4,7 +4,7 @@ module Adapters
     def connection
       @connection = Adapters::DataConnection.new
     end
-
+# perhaps can be one mehtod, with yellow or green passed in as an argument
     def find_yellow_cabs(trip)
       url = build_yellow_cab_url(trip)
       connection.query(url)

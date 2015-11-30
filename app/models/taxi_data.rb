@@ -6,7 +6,7 @@ require 'time_diff'
 require 'pry'
 
 class TaxiData
-
+  # Can move into two different objects - fare calculator, and time calculator
   def calculate_fare(user_trips)
    
     num = user_trips.map do |trip|

@@ -7,7 +7,7 @@ class GoogleMap
   def connection
     @connection = Adapters::DataConnection.new
   end
-   
+   # This also looks like an adapter to me - but its not a bad object
   def query(url_string)
     data = RestClient::Request.execute(method: :get, url: url_string)
     test_data = JSON.load(data)
@@ -21,6 +21,7 @@ class GoogleMap
   end
 
   def format_google_results(results)
+    # I would say this we want to insert into another object instead of a hash
     map_hash = test_data['routes'][0]['legs'].map do |hash|
       {hash['departure_time']['text']
       hash['arrival_time']['text']
@@ -39,7 +40,7 @@ class GoogleMap
 end
 
 
-
+# What is this?
 ############## WORKING CODE ################
 ### DIRECTIONS: https://maps.googleapis.com/maps/api/directions/json?origin=40.705329,-74.0139696&destination=40.7599157,-73.9911492&mode=transit&key=AIzaSyBxVcOzWLwm2ihNWF4B5obSq-n_7qjJPWQ
 

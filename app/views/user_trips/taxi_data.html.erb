@@ -1,4 +1,4 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-
+<!-- the data method HistoricalTric... is too complicated - these types of complications should be a mehtod in the HistoricalTrip Object -->
 <%= column_chart [{name: "Avg Price Per Hour", data: HistoricalTrip.group_by_hour_of_day(:tpep_pickup_datetime).average(:total_amount)}] %>
 

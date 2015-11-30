@@ -8,6 +8,7 @@ class Lyft
   # end
 
   def build_lyft(trip)
+    # This looks like it should be broken out to different methods
     directions = GoogleDirections.new(trip.origin.address, trip.destination.address)
     drive_time_in_minutes = directions.drive_time_in_minutes
     distance_in_miles = directions.distance_in_miles
